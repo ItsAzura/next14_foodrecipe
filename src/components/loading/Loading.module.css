@@ -1,65 +1,75 @@
-.loader {
+.container {
   position: absolute;
-  top: calc(50% - 32px);
-  left: calc(50% - 32px);
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  perspective: 800px;
+  top: 45%;
+  left: 48%;
 }
 
-.inner {
+.square {
+  width: 8px;
+  height: 30px;
+  background: rgb(71, 195, 248);
+  border-radius: 10px;
+  display: block;
+  /*margin:10px;*/
+  -webkit-animation: turn 2.5s ease infinite;
+  animation: turn 2.5s ease infinite;
+  box-shadow: rgb(71, 195, 248) 0px 1px 15px 0px;
+}
+
+.top {
   position: absolute;
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
+  left: 40%;
+  top: 50%;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
-.inner.one {
-  left: 0%;
-  top: 0%;
-  animation: rotate-one 1s linear infinite;
-  border-bottom: 3px solid #efeffa;
+.bottom {
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
 }
 
-.inner.two {
-  right: 0%;
-  top: 0%;
-  animation: rotate-two 1s linear infinite;
-  border-right: 3px solid #efeffa;
+.left {
+  position: absolute;
+  left: 40%;
+  top: 50%;
 }
 
-.inner.three {
-  right: 0%;
-  bottom: 0%;
-  animation: rotate-three 1s linear infinite;
-  border-top: 3px solid #efeffa;
+.right {
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  -webkit-transform: rotate(-180deg);
+  transform: rotate(-180deg);
 }
 
-@keyframes rotate-one {
+@-webkit-keyframes turn {
   0% {
-    transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+    transform: translateX(0) translateY(0) rotate(0);
   }
+
+  50% {
+    transform: translateX(400%) translateY(100%) rotate(90deg);
+  }
+
   100% {
-    transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+    transform: translateX(0) translateY(0) rotate(0);
   }
 }
 
-@keyframes rotate-two {
+@keyframes turn {
   0% {
-    transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+    transform: translateX(0) translateY(0) rotate(0);
   }
-  100% {
-    transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
-  }
-}
 
-@keyframes rotate-three {
-  0% {
-    transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+  70% {
+    transform: translateX(400%) translateY(100%) rotate(90deg);
   }
+
   100% {
-    transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+    transform: translateX(0) translateY(0) rotate(0);
   }
 }
